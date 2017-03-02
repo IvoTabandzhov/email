@@ -7,11 +7,16 @@ using System.Web.UI.WebControls;
 
 namespace EmailApplication
 {
-	public partial class inbox1 : System.Web.UI.Page
-	{
+    public partial class Email : System.Web.UI.MasterPage
+    {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
         }
-	}
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("logInScreen.aspx");
+        }
+    }
 }

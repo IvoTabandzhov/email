@@ -1,0 +1,45 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Email.master.cs" Inherits="EmailApplication.Email" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Email</title>
+
+    <style>
+        .h1 {
+            text-align: center;
+            display:inline-block;
+        }
+    </style>
+
+</head>
+    <%
+        if (Request.Cookies["colour"] != null)
+        {
+            string color = Request.Cookies["colour"].Value.ToString();
+            Response.Write("<body bgcolor='" + color + "'>"); 
+        }
+
+         %>
+    <form id="form1" runat="server">
+    <div>
+        <h1 align="center">Welcome To Your Emails </h1>
+
+        <asp:Button ID="Button1" runat="server" Text="Home" Height="26px"/>
+        <asp:Button ID="Button2" runat="server" Text="Compose" Height="26px" />
+        <asp:Button ID="Button3" runat="server" Text="Log-out" Style ="float: right; margin-top: -26px;" Height="26px" OnClick="Button3_Click"/>   
+        
+        <asp:ContentPlaceHolder ID="Inbox" runat="server">
+
+        </asp:ContentPlaceHolder> 
+
+        <div align = "center">
+            <footer>
+                <p>&copy; 2017 - Ivo & Tim Application</p>
+            </footer>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

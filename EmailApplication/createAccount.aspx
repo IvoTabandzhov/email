@@ -7,62 +7,59 @@
 <head runat="server">
     <title></title>
 </head>
-<body>
+     <%
+        if (Request.Cookies["colour"] != null)
+        {
+            string color = Request.Cookies["colour"].Value.ToString();
+            Response.Write("<body bgcolor='"+color+"'>'"); 
+        }
+
+         %>
     <form id="form1" runat="server">
-    <div>
+    <div align="center">
         <h2>Please Fill The Registartion Form Below To Create An Account</h2>
-        Email Address: <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-        <br />
-        Name: <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
-        <br />
-        Address: <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
-        <br />
-        Password: <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
-        <br />
-        Re-Enter Password: <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
-        <br />
-        Security Question:
-        <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
-        <br />
-        Security Answer:
-        <asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
+        <div style="border-style: ridge; border-color: inherit; border-width: medium; width: 357px; height: 350px;">
+                <br />
+                <label for="TextBox1" style=" display:inline-block; width:115px; margin-right:30px; text-align:right;">Email Address: </label><asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                    <br />
+                <br />
+                <label for="TextBox2" style=" display:inline-block; width:115px; margin-right:30px; text-align:right;">Name: </label><asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                    <br />
+                <br />
+                <label for="TextBox3" style=" display:inline-block; width:115px; margin-right:30px; text-align:right;">Address: </label><asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+                    <br />
+                <br />
+                <label for="TextBox4" style=" display:inline-block; width:115px; margin-right:30px; text-align:right;">Password: </label><asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+                    <br />
+                <br />
+                <label for="TextBox5" style=" display:inline-block; width:115px; margin-right:30px; text-align:right;">Re-Enter Password: </label><asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+                    <br />
+                <br />
+                <label for="TextBox6" style=" display:inline-block; width:115px; margin-right:30px; text-align:right;">Security Question: </label><asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
+                    <br />
+                <br />
+                <label for="TextBox7" style=" display:inline-block; width:115px; margin-right:30px; text-align:right;">Security Answer: </label><asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
+                    <br />
+                    <br />
+            </div>
+
         <br />
 
-        <asp:Button ID="Button1" runat="server" Text="Create Account" />
+        <asp:Button ID="Button1" runat="server" Text="Create Account" OnClick="Button1_Click" />
 
-        <%
-            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename='c:\\users\\administrator\\documents\\visual studio 2015\\Projects\\EmailApplication\\EmailApplication\\App_Data\\EmailsDB.mdf';Integrated Security=True");
-            SqlCommand cmd = new SqlCommand();
+        <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Sign In" />
 
-            con.Open();
-            cmd.Connection = con;
-
-            cmd.CommandText = "SELECT EmailAddress FROM Users WHERE EmailAddress ='" + TextBox1.Text + "'";
-            SqlDataReader rd = cmd.ExecuteReader();
-
-            if (rd.Read())
-            {
-                Label1.Text = "Email Address Already Taken";
-            }
-            else
-            {
-                rd.Close();
-                con.Close();
-                con.Open();
-                cmd.Connection = con;
-
-                cmd.CommandText = "INSERT INTO Users VALUES('" + TextBox1.Text + "','" + TextBox2.Text + "','" + TextBox3.Text + "','" + TextBox4.Text + "','" + TextBox6.Text + "','" + TextBox7.Text + "')";
-                cmd.ExecuteNonQuery();
-                con.Close();
-                Label1.Text = "Record Saved!";
-            }
-
-             %>
+        <br />
 
         <br />
         <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
 
     </div>
+        <div align = "center">
+            <footer>
+                <p>&copy; 2017 - Ivo & Tim Application</p>
+            </footer>
+        </div>
     </form>
 </body>
 </html>

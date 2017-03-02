@@ -94,10 +94,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="forgotPassword.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Email.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -113,6 +115,7 @@
     <Content Include="createAccount.aspx" />
     <Content Include="inbox.aspx" />
     <Content Include="logInScreen.aspx" />
+    <Content Include="securityQuestion.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -122,6 +125,20 @@
     </Compile>
     <Compile Include="createAccount.aspx.designer.cs">
       <DependentUpon>createAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Email.Master.cs">
+      <DependentUpon>Email.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Email.Master.designer.cs">
+      <DependentUpon>Email.Master</DependentUpon>
+    </Compile>
+    <Compile Include="forgotPassword.aspx.cs">
+      <DependentUpon>forgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forgotPassword.aspx.designer.cs">
+      <DependentUpon>forgotPassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="inbox.aspx.cs">
       <DependentUpon>inbox.aspx</DependentUpon>
@@ -138,6 +155,13 @@
       <DependentUpon>logInScreen.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="securityQuestion.aspx.cs">
+      <DependentUpon>securityQuestion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="securityQuestion.aspx.designer.cs">
+      <DependentUpon>securityQuestion.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
