@@ -32,7 +32,7 @@
     </div>
         <div align = "center">
             <footer>
-                <p>&copy; 2017 - Ivo & Tim Application</p>
+                <p>&copy; 2017 - Ivo & Tim Email Application</p>
             </footer>
         </div>
     </form>

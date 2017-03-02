@@ -46,7 +46,7 @@
                  <asp:Label ID="Label1" runat="server" ForeColor= "red"></asp:Label>
              </div>
             <footer>
-            <p>&copy; 2017 - Ivo & Tim Application</p>
+            <p>&copy; 2017 - Ivo & Tim Email Application</p>
         </footer>
          </div>
     </div>

@@ -72,7 +72,7 @@ namespace EmailApplication
                     this.Label1.Text = "Please Enter Your Email Address & Password";
                 }
                 else{
-                    this.Label1.Text = "Invalid user info";
+                    this.Label1.Text = "Invalid User Information";
                 }
             }
         }
