@@ -23,12 +23,14 @@
 
          %>
     <form id="form1" runat="server">
-    <div>
+    <div align="center">
         <h1 align="center">Welcome To Your Emails </h1>
 
         <asp:Button ID="Button1" runat="server" Text="Home" Height="26px"/>
-        <asp:Button ID="Button2" runat="server" Text="Compose" Height="26px" />
-        <asp:Button ID="Button3" runat="server" Text="Log-out" Style ="float: right; margin-top: -26px;" Height="26px" OnClick="Button3_Click"/>   
+        <asp:Button ID="Button2" runat="server" Text="Compose" Height="26px" OnClick="Button2_Click" />
+        <asp:Button ID="Button4" runat="server" Text="Address Book" Height="26px"/>
+    
+        <asp:Button ID="Button3" runat="server" Text="Log-out" Style ="float: right; margin-top: -26px;" Height="26px"  width="63px" OnClick="Button3_Click"/>   
         
         <asp:ContentPlaceHolder ID="Inbox" runat="server">
 

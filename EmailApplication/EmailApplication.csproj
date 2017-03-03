@@ -94,6 +94,11 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Email2.mdf" />
+    <Content Include="App_Data\Email2_log.ldf">
+      <DependentUpon>Email2.mdf</DependentUpon>
+    </Content>
+    <Content Include="compose.aspx" />
     <Content Include="forgotPassword.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
@@ -113,12 +118,20 @@
       <DependentUpon>EmailsDB.mdf</DependentUpon>
     </Content>
     <Content Include="createAccount.aspx" />
-    <Content Include="inbox.aspx" />
+    <Content Include="Inbox.aspx" />
     <Content Include="logInScreen.aspx" />
     <Content Include="securityQuestion.aspx" />
+    <Content Include="view.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="compose.aspx.cs">
+      <DependentUpon>compose.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="compose.aspx.designer.cs">
+      <DependentUpon>compose.aspx</DependentUpon>
+    </Compile>
     <Compile Include="createAccount.aspx.cs">
       <DependentUpon>createAccount.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -140,12 +153,12 @@
     <Compile Include="forgotPassword.aspx.designer.cs">
       <DependentUpon>forgotPassword.aspx</DependentUpon>
     </Compile>
-    <Compile Include="inbox.aspx.cs">
-      <DependentUpon>inbox.aspx</DependentUpon>
+    <Compile Include="Inbox.aspx.cs">
+      <DependentUpon>Inbox.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="inbox.aspx.designer.cs">
-      <DependentUpon>inbox.aspx</DependentUpon>
+    <Compile Include="Inbox.aspx.designer.cs">
+      <DependentUpon>Inbox.aspx</DependentUpon>
     </Compile>
     <Compile Include="logInScreen.aspx.cs">
       <DependentUpon>logInScreen.aspx</DependentUpon>
@@ -161,6 +174,13 @@
     </Compile>
     <Compile Include="securityQuestion.aspx.designer.cs">
       <DependentUpon>securityQuestion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view.aspx.cs">
+      <DependentUpon>view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view.aspx.designer.cs">
+      <DependentUpon>view.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <PropertyGroup>

@@ -16,7 +16,13 @@ namespace EmailApplication
 
         protected void Button3_Click(object sender, EventArgs e)
         {
+            Session["user"] = " ";
             Response.Redirect("logInScreen.aspx");
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("compose.aspx");
         }
     }
 }

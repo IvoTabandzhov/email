@@ -49,7 +49,7 @@ namespace EmailApplication
 
             if (ds.Tables[0].Rows.Count > 0)
             {
-
+                Session["user"] = TextBox1.Text;
                 if (CheckBox1.Checked == true)
                 {
                     Response.Cookies["EmailAddress"].Value = TextBox1.Text;
@@ -63,7 +63,7 @@ namespace EmailApplication
                     Response.Cookies["EmailAddress"].Expires = DateTime.Now.AddDays(-1);
                     Response.Cookies["Password"].Expires = DateTime.Now.AddDays(-1);
                 }
-                Response.Redirect("inbox.aspx");
+                Response.Redirect("Inbox.aspx");
             }
             else
             {
